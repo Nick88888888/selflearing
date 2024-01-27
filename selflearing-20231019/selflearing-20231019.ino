@@ -1,5 +1,5 @@
 
-
+char c[20];
 int i=0,openmv_speed1=0,openmv_heanding=100;
 int change=1,a=0;//找負號change是用來變號的
 int find_value=0;
