@@ -1,19 +1,8 @@
-// Adafruit Motor shield library
-// copyright Adafruit Industries LLC, 2009
-// this code is public domain, enjoy!
-char c[20];
-int Rcm_avange[6],middle_avange[6],Lcm_avange[6];
-int d=0;
-int count=0;
+
+
 int i=0,openmv_speed1=0,openmv_heanding=100;
-int Rcm,Lcm,Rcount=0,middlecm;//Rcm左超音波真的距離  Lcmu右超音波真的距離
-long RTime,LTime,middleTime;
 int change=1,a=0;//找負號change是用來變號的
 int find_value=0;
-int q=0;
-int sum_R=0,sum_L=0;
-int sum_middle=0;
-int past_R,past_G;
 
 #include <AFMotor.h>
 #include <string.h>
@@ -44,7 +33,7 @@ void setup() {
 }
 
 void loop() {
-   int G=0,R=0;
+
    if (Serial.available()) 
    {   
        c[i] = Serial.read();
@@ -82,20 +71,7 @@ void loop() {
          {
             openmv_heanding = openmv_heanding*10+(c[k]-48);
          }
-         if(c[r+1]=='M')
-         {
-          find_value=0;
-         }
-         else if(c[r+1]=='G'  )
-         {
-          find_value=1;
-          G=1;
-         }   
-         else if(c[r+1]=='R')    
-         {
-          find_value=1; 
-          R=1;
-         }
+       
          Serial.println(openmv_speed1*change);
          Serial.println(change);
          Serial.println(openmv_heanding);
